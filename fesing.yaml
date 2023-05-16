@@ -1,0 +1,579 @@
+---
+-
+  message: status
+  field: soc
+  doc: State of charge
+  unit: \%
+  offset: 0
+  size: 1
+- 
+  message: status
+  field: rate_capa
+  doc: Rated capacity
+  unit: Ah
+  offset: 1
+  size: 2
+  mult: 0.1
+-
+  message: status
+  field: batt_volt
+  doc: Battery voltage
+  unit: V
+  offset: 3
+  size: 2
+  mult: 0.1
+- 
+  message: status
+  field: current
+  doc: Battery current
+  unit: A
+  offset: 5
+  size: 2
+  shift: -30000
+  mult: 0.1
+- 
+  message: status
+  field: bms_status
+  doc: BMS Work status? 0x04 - standby, 0x02 - charging
+  offset: 25
+  size: 1
+- 
+  message: status
+  field: relay1
+  doc: Relay 1 status?
+  offset: 26
+  size: 1
+- 
+  message: status
+  field: relay2
+  doc: Relay 2 status?
+  offset: 27
+  size: 1
+- 
+  message: status
+  field: relay3
+  doc: Relay 3 status?
+  offset: 28
+  size: 1
+- 
+  message: status
+  field: relay4
+  doc: Relay 4 status?
+  offset: 29
+  size: 1
+- 
+  message: status
+  field: soh
+  doc: State of health?
+  unit: \%
+  offset: 30
+  size: 1
+- 
+  message: status
+  field: cycles
+  doc: Cycles?
+  offset: 31
+  size: 2
+- 
+  message: status
+  field: cell_volt_diff
+  doc: Voltage difference between min and max cell
+  unit: mV
+  offset: 33
+  size: 2
+- 
+  message: status
+  field: cell_temp_diff
+  doc: Temperature difference between min and max cell
+  unit: C
+  offset: 35
+  size: 2
+  mult: 0.1
+- 
+  message: status
+  field: avg_cell_volt
+  doc: Average cell voltage
+  unit: mV
+  offset: 37
+  size: 2
+- 
+  message: status
+  field: avg_cell_temp
+  doc: Average cell temperature
+  unit: C
+  offset: 39
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: status
+  field: max_v_cell_volt
+  doc: Highest voltage of the cell
+  unit: mV
+  offset: 41
+  size: 2
+- 
+  message: status
+  field: max_v_cell_id
+  doc: ID of the highest voltage cell
+  unit:
+  offset: 43
+  size: 1
+- 
+  message: status
+  field: min_v_cell_volt
+  doc: Lowest voltage of the cell
+  unit: mV
+  offset: 44
+  size: 2
+- 
+  message: status
+  field: min_v_cell_id
+  doc: ID of the lowest voltage cell
+  unit: 
+  offset: 46
+  size: 1
+- 
+  message: status
+  field: max_cell_temp
+  doc: Temperature of the hottest cell
+  unit: C
+  offset: 47
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: status
+  field: min_cell_temp
+  doc: Temperature of the coldest cell
+  unit: C
+  offset: 49
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: status
+  field: max_charge_cur
+  doc: Max charging current?
+  unit: A
+  offset: 119
+  size: 2
+  mult: 0.1
+- 
+  message: status
+  field: max_discharge_cur
+  doc: Max discharging current?
+  unit: A
+  offset: 121
+  size: 2
+  mult: 0.1
+- 
+  message: alarm
+  field: high_total_volt
+  doc: Alarm HighTotalVolt
+  offset: 51
+  size: 1
+- 
+  message: alarm
+  field: low_total_volt
+  doc: Alarm LowTotalVolt
+  offset: 52
+  size: 1
+- 
+  message: alarm
+  field: high_volt
+  doc: Alarm HighVolt 
+  offset: 53
+  size: 1
+- 
+  message: alarm
+  field: low_volt
+  doc: Alarm LowVolt
+  offset: 54
+  size: 1
+- 
+  message: alarm
+  field: cell_high_temp
+  doc: Alarm CellHighTemp
+  offset: 55
+  size: 1
+- 
+  message: alarm
+  field: cell_low_temp
+  doc: Alarm CellLowTemp
+  offset: 56
+  size: 1
+- 
+  message: alarm
+  field: high_temp
+  doc: Alarm HighTemp
+  offset: 57
+  size: 1
+- 
+  message: alarm
+  field: low_temp
+  doc: Alarm LowTemp
+  offset: 58
+  size: 1
+- 
+  message: alarm
+  field: ta_high_temp
+  doc: Alarm TaHighTemp
+  offset: 59
+  size: 1
+- 
+  message: alarm
+  field: ta_low_temp
+  doc: Alarm TaLowTemp
+  offset: 60
+  size: 1
+- 
+  message: alarm
+  field: over_volt_differ
+  doc: Alarm OverVoltDiffer
+  offset: 61
+  size: 1
+- 
+  message: alarm
+  field: over_temp_differ
+  doc: Alarm OverTempDiffer
+  offset: 62
+  size: 1
+- 
+  message: alarm
+  field: low_soc
+  doc: Alarm LowSOC
+  offset: 63
+  size: 1
+- 
+  message: alarm
+  field: cell_fast_temp_rise
+  doc: Alarm CellFastTempRise
+  offset: 64
+  size: 1
+- 
+  message: alarm
+  field: mos_control_protect
+  doc: Alarm MOSControlProtect
+  offset: 65
+  size: 1
+- 
+  message: alarm
+  field: charge_high_current
+  doc: Alarm ChargeHighCurrent
+  offset: 66
+  size: 1
+- 
+  message: alarm
+  field: dischg_high_current
+  doc: Alarm DischargeHighCurrent
+  offset: 67
+  size: 1
+- 
+  message: alarm
+  field: short_circuit
+  doc: Alarm ShortCircuit
+  offset: 68 
+  size: 1
+- 
+  message: alarm
+  field: precharge_fault
+  doc: Alarm PrechargeFault
+  offset: 69
+  size: 1
+- 
+  message: alarm
+  field: volt_cable
+  doc: Alarm VoltCable
+  offset: 70
+  size: 1
+- 
+  message: alarm
+  field: temp_cable
+  doc: Alarm TempCable
+  offset: 71
+  size: 1
+- 
+  message: alarm
+  field: afe_fault
+  doc: Alarm AFEFault
+  offset: 72
+  size: 1
+- 
+  message: temp
+  field: cell1
+  doc: Temperature of first cell thermometer
+  unit: C
+  offset: 73
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: temp
+  field: cell2
+  doc: Temperature of second cell thermometer
+  unit: C
+  offset: 75
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: temp
+  field: cell3
+  doc: Temperature of third cell thermometer
+  unit: C
+  offset: 77
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: temp
+  field: cell4
+  doc: Temperature of fourth cell thermometer
+  unit: C
+  offset: 79
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: temp
+  field: mos
+  doc: Temperature of MOS
+  unit: C
+  offset: 81
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: temp
+  field: ta
+  doc: Temperature of TA
+  unit: C
+  offset: 83
+  size: 2
+  shift: -500
+  mult: 0.1
+- 
+  message: cell_volt
+  field: c1
+  doc: Voltage of cell 1
+  unit: mV
+  offset: 85
+  size: 2
+- 
+  message: cell_volt
+  field: c2
+  doc: Voltage of cell 2
+  unit: mV
+  offset: 87
+  size: 2
+- 
+  message: cell_volt
+  field: c3
+  doc: Voltage of cell 3
+  unit: mV
+  offset: 89
+  size: 2
+- 
+  message: cell_volt
+  field: c4
+  doc: Voltage of cell 4
+  unit: mV
+  offset: 91
+  size: 2
+- 
+  message: cell_volt
+  field: c5
+  doc: Voltage of cell 5
+  unit: mV
+  offset: 93
+  size: 2
+- 
+  message: cell_volt
+  field: c6
+  doc: Voltage of cell 6
+  unit: mV
+  offset: 95
+  size: 2
+- 
+  message: cell_volt
+  field: c7
+  doc: Voltage of cell 7
+  unit: mV
+  offset: 97
+  size: 2
+- 
+  message: cell_volt
+  field: c8
+  doc: Voltage of cell 8
+  unit: mV
+  offset: 99
+  size: 2
+- 
+  message: cell_volt
+  field: c9
+  doc: Voltage of cell 9
+  unit: mV
+  offset: 101
+  size: 2
+- 
+  message: cell_volt
+  field: c10
+  doc: Voltage of cell 10
+  unit: mV
+  offset: 103
+  size: 2
+- 
+  message: cell_volt
+  field: c11
+  doc: Voltage of cell 11
+  unit: mV
+  offset: 105
+  size: 2
+- 
+  message: cell_volt
+  field: c12
+  doc: Voltage of cell 12
+  unit: mV
+  offset: 107
+  size: 2
+- 
+  message: cell_volt
+  field: c13
+  doc: Voltage of cell 13
+  unit: mV
+  offset: 109
+  size: 2
+- 
+  message: cell_volt
+  field: c14
+  doc: Voltage of cell 14
+  unit: mV
+  offset: 111
+  size: 2
+- 
+  message: cell_volt
+  field: c15
+  doc: Voltage of cell 15
+  unit: mV
+  offset: 113
+  size: 2
+- 
+  message: cell_volt
+  field: c16
+  doc: Voltage of cell 16
+  unit: mV
+  offset: 115
+  size: 2
+- 
+  message: status
+  field: curr_adu
+  doc: Battery current in ADU units
+  offset: 117
+  size: 2
+  shift: -30000
+- 
+  message: unknown
+  field: s1b01
+  offset: 7
+  size: 1
+- 
+  message: unknown
+  field: s1b02
+  offset: 8
+  size: 1
+- 
+  message: unknown
+  field: s1b03
+  offset: 9
+  size: 1
+- 
+  message: unknown
+  field: s1b04
+  offset: 10
+  size: 1
+- 
+  message: unknown
+  field: s1b05
+  offset: 11
+  size: 1
+- 
+  message: unknown
+  field: s1b06
+  offset: 12
+  size: 1
+- 
+  message: unknown
+  field: s1b07
+  offset: 13
+  size: 1
+- 
+  message: unknown
+  field: s1b08
+  offset: 14
+  size: 1
+- 
+  message: unknown
+  field: s1b09
+  offset: 15
+  size: 1
+- 
+  message: unknown
+  field: s1b10
+  offset: 16
+  size: 1
+- 
+  message: unknown
+  field: s1b11
+  offset: 17
+  size: 1
+- 
+  message: unknown
+  field: s1b12
+  offset: 18
+  size: 1
+- 
+  message: unknown
+  field: s1b13
+  offset: 19
+  size: 1
+- 
+  message: unknown
+  field: s1b14
+  offset: 20
+  size: 1
+- 
+  message: unknown
+  field: s1b15
+  offset: 21
+  size: 1
+- 
+  message: unknown
+  field: s1b16
+  offset: 22
+  size: 1
+- 
+  message: unknown
+  field: s1b17
+  offset: 23
+  size: 1
+- 
+  message: unknown
+  field: s1b18
+  offset: 24
+  size: 1
+- 
+  message: unknown
+  field: s2b01
+  offset: 123
+  size: 1
+- 
+  message: unknown
+  field: s2b02
+  offset: 124
+  size: 1
+- 
+  message: unknown
+  field: s2b03
+  offset: 125
+  size: 1
